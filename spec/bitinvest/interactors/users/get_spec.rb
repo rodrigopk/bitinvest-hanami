@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe Interactors::Users::Get, type: :interactor do
@@ -13,7 +15,7 @@ RSpec.describe Interactors::Users::Get, type: :interactor do
 
     it 'initializes with dependencies' do
       described_class.new(
-        user_id, 
+        user_id,
         user_repository: user_repository,
       )
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe Web::Controllers::Users::Show, type: :action do
@@ -66,7 +68,7 @@ RSpec.describe Web::Controllers::Users::Show, type: :action do
         Hanami::Interactor::Result,
         failure?: true,
         error: [:user_not_found],
-      )
+      ),
     )
   end
 
