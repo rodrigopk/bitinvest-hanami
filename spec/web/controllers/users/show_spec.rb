@@ -67,7 +67,7 @@ RSpec.describe Web::Controllers::Users::Show, type: :action do
       instance_double(
         Hanami::Interactor::Result,
         failure?: true,
-        error: [:user_not_found],
+        error: [InteractorErrors.user_not_found],
       ),
     )
   end

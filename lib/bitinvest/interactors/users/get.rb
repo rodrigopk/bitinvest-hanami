@@ -9,8 +9,6 @@ module Interactors
 
       expose :user
 
-      USER_NOT_FOUND_ERROR = :user_not_found
-
       def initialize(user_id, dependencies = {})
         @user_repository = dependencies.fetch(:user_repository) do
           UserRepository.new
@@ -21,7 +19,7 @@ module Interactors
 
       def call
         @user = @user_repository.find(@user_id)
-        error!(USER_NOT_FOUND_ERROR) if @user.nil?
+        error!(InteractorErrors.user_not_found) if @user.nil?
       end
     end
   end

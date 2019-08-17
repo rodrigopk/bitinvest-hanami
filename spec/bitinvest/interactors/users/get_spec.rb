@@ -40,7 +40,8 @@ RSpec.describe Interactors::Users::Get, type: :interactor do
         allow(user_repository).to fetch_user_and_return(nil)
 
         result = call_interactor_with_dependencies
-        expect(result.errors).to match_array([:user_not_found])
+        expect(result.errors)
+          .to match_array([InteractorErrors.user_not_found])
       end
     end
 
