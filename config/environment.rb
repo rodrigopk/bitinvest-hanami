@@ -43,7 +43,9 @@ Hanami.configure do
     logger level: :info, formatter: :json, filter: []
 
     mailer do
-      delivery :smtp, address: ENV.fetch('SMTP_HOST'), port: ENV.fetch('SMTP_PORT')
+      # delivery :smtp,
+      #          address: ENV.fetch('SMTP_HOST'),
+      #          port: ENV.fetch('SMTP_PORT')
     end
   end
 end
