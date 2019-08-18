@@ -43,7 +43,7 @@ module Interactors
       def user_attributes_from_parameters(params)
         {
           email: params[:email],
-          password: @encryption_service.create(params[:password]),
+          password_digest: @encryption_service.create(params[:password]),
           first_name: params[:first_name],
           last_name: params[:last_name],
         }

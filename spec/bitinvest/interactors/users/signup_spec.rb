@@ -88,7 +88,7 @@ RSpec.describe Interactors::Users::Signup, type: :interactor do
     receive(:create)
       .with(
         email: email,
-        password: hashed_password,
+        password_digest: hashed_password,
         first_name: first_name,
         last_name: last_name,
       )
