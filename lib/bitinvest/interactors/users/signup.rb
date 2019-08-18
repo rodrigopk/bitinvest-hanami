@@ -32,11 +32,11 @@ module Interactors
 
       def inject_dependencies(dependencies)
         @user_repository = dependencies.fetch(:user_repository) do
-          UserRepository.new
+          Containers::Users[:user_repository].new
         end
 
         @encryption_service = dependencies.fetch(:encryption_service) do
-          BCrypt::Password
+          Containers::Services[:password_encryption]
         end
       end
 

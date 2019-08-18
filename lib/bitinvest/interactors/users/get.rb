@@ -11,7 +11,7 @@ module Interactors
 
       def initialize(user_id, dependencies = {})
         @user_repository = dependencies.fetch(:user_repository) do
-          UserRepository.new
+          Containers::Users[:user_repository].new
         end
 
         @user_id = user_id
