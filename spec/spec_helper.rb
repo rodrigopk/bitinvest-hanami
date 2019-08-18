@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'rspec/hanami'
+
 # Require this file for unit tests
 ENV['HANAMI_ENV'] ||= 'test'
 
@@ -8,6 +10,8 @@ Hanami.boot
 Hanami::Utils.require!("#{__dir__}/support")
 
 RSpec.configure do |config|
+  config.include RSpec::Hanami::Matchers
+
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
