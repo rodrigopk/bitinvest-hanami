@@ -1,0 +1,17 @@
+<h1>Signup</h1>
+
+
+<%=
+  form_for :user, routes.signup_path do
+    label :first_name
+    text_field :first_name, required: true
+    label :last_name
+    text_field :last_name
+    label :email
+    email_field :email, required: true
+    label :password
+    password_field :password, required: true
+
+    submit 'Signup'
+  end
+%>
