@@ -24,6 +24,7 @@ end
 group :test do
   gem 'capybara'
   gem 'rspec'
+  gem 'rspec-hanami'
 end
 
 group :production do
